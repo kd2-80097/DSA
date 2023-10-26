@@ -2,6 +2,8 @@ package com.sunbeam;
 
 import java.util.Scanner;
 
+/* 3. Implement binary search algorithm if array is sorted in descending order.  */
+
 public class BinarySearch {
 	
 	public static int binarySearch(int arr[], int size, int key) {

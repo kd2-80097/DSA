@@ -4,6 +4,11 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
 
+/* 2. Create array of employees and search employee by 
+	i. empid
+	ii. name
+	iii. salary      */
+
 public class TestBinarySearch {
 	
 	//Binary Search by Id
@@ -30,19 +35,23 @@ public class TestBinarySearch {
 	//Binary Search by Name
 	public static int searchByName(Employee arr[],String key,int size) {
 		int left=0, right=size-1, mid=0, count=0;
-		while(left<=right) {
+		while(left<=right) 
+		{
 			mid = (left+right)/2;
 			count++;
-			if(arr[mid].getName().equalsIgnoreCase(key)) {
+			
+			if(arr[mid].getName().equalsIgnoreCase(key))
+			{
 				System.out.println("No. of Comparisons = "+count);
 				return mid;
 			}
-			else if((arr[mid].getName().compareTo(key)) == -1)  {
-				left = mid+1;
-			}
-			else {
-				right=mid-1;
-			}
+			else 
+				if((arr[mid].getName().compareTo(key)) <0)  {
+					left = mid+1;
+				}
+				else {
+					right=mid-1;
+				}
 		}
 		System.out.println("No. of Comparisons = "+count);
 		return -1;
@@ -114,17 +123,15 @@ public class TestBinarySearch {
 //		int key = sc.nextInt();
 //		int res = searchById(arr, key, arr.length);
 		
-//		Arrays.sort(arr,new NameComparator());  //Sorting by Name
-//		for(Employee e:arr)
-//			System.out.println(e);
-//		System.out.println("Enter the Name to Search = ");
-//		String key = sc.next();
-//		int res = searchByName(arr, key, arr.length);
+		Arrays.sort(arr,new NameComparator());  //Sorting by Name
+		System.out.println("Enter the Name to Search = ");
+		String key = sc.next();
+		int res = searchByName(arr, key, arr.length);
 		
-		Arrays.sort(arr,new SalaryComparator());  //Sorting by Salary
-		System.out.println("Enter the Salary to Search = ");
-		double key = sc.nextDouble();
-		int res = searchBySalary(arr, key, arr.length);
+//		Arrays.sort(arr,new SalaryComparator());  //Sorting by Salary
+//		System.out.println("Enter the Salary to Search = ");
+//		double key = sc.nextDouble();
+//		int res = searchBySalary(arr, key, arr.length);
 		
 		if(res != -1) {
 			System.out.println("Key Found at Index "+res);

@@ -2,6 +2,9 @@ package com.sunbeam;
 
 import java.util.Scanner;
 
+/* 1. Write a program to print no of comparisions done to search a key in
+	 linear search    */
+
 public class LinearSearch {
 	
 	public static int linearSearch(int arr[],int key) {

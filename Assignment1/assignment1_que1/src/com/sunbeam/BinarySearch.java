@@ -2,6 +2,9 @@ package com.sunbeam;
 
 import java.util.Scanner;
 
+/* 1. Write a program to print no of comparisions done to search a key in 
+      binary search    */
+
 public class BinarySearch {
 	
 	public static int binarySearch(int arr[],int key,int size) {

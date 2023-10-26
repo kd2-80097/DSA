@@ -5,6 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+/* 2. Create array of employees and search employee by 
+i. empid
+ii. name
+iii. salary      */
+
 public class TestLinearSearch {
 	
 	public static int searchById(Employee arr[],int key) {
