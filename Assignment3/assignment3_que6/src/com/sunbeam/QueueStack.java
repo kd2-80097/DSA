@@ -18,9 +18,7 @@ public class QueueStack
 	
 	public void push(int data) 
 	{
-		// a. reposition rear (inc)
-		front++;
-		// b. add data at rear index
+		front++;	
 		arr[front] = data;
 	}
 	
