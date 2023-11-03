@@ -30,6 +30,16 @@ public class List
 		return head == null; 
 	}
 	
+	public Node getHead() 
+	{
+		return head;
+	}
+
+	public void setHead(Node head) 
+	{
+		this.head = head;
+	}
+	
 	public void addFirst(int value)
 	{
 		Node newnode = new Node(value);
@@ -105,6 +115,59 @@ public class List
 		}	
 	}
 	
+	public int length() 
+	{
+		 int length = 0;
+		    Node trav = head;
+		    while (trav != null) 
+		    {
+		        length++;
+		        trav = trav.next;
+		    }
+		    return length;
+	}
 	
+	public static void bubbleSort(List list) 
+	{
+        int n = list.length();
+        
+        for (int pass = 0; pass < n - 1; pass++)
+        {
+            Node currentNode = list.getHead();
+            Node nextNode = currentNode.next;
+            Node prevNode = null;
+            boolean swap = false;
+
+            for (int i = 0; i < n - pass - 1; i++)
+            {
+                if (currentNode.data > nextNode.data) 
+                {
+                    if (prevNode == null) // at the head of the linked list, and a swap is going to happen 
+                    	//with the first node in the list
+                        list.setHead(nextNode);
+                    else 
+                    	prevNode.next=nextNode;
+                    
+                    currentNode.next=nextNode.next;
+                    nextNode.next=currentNode;
+
+                    prevNode = nextNode;
+                    nextNode = currentNode.next;
+                    swap = true;
+                } 
+                else 
+                {
+                	prevNode = currentNode;
+                    currentNode = nextNode;
+                    nextNode = nextNode.next;
+                }
+            }
+
+            if (!swap) {
+                // If no Swapping then list is already sorted.
+                break;
+            }
+        }
+    }
 
 }
